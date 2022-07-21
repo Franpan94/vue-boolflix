@@ -1,6 +1,6 @@
 <template>
   <main>
-    <FilmList :search= 'search'/>
+    <FilmList :film= 'film'/>
   </main>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     FilmList,
   },
 
-  props: ['search']
+  props: ['film']
 };
 </script>
 

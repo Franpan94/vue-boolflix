@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h1>{{search.title}}</h1>
-    <h2>{{search.original_title}}</h2>
-    <h2>{{search.original_language}}</h2>
-    <h2>{{search.vote_average}}</h2>
+    <h1>{{film.title}}</h1>
+    <h3>{{film.original_title}}</h3>
+    <h3>{{film.original_language}}</h3>
+    <h3>{{film.vote_average}}</h3>
   </section>
 </template>
 
@@ -11,7 +11,7 @@
 export default {
   name: 'FilmList',
 
-  props: ['search']
+  props: ['film']
 }
 </script>
 
