@@ -1,21 +1,22 @@
 <template>
-  <div>
-    <FilmList />
-   <h1>Main</h1>
-  </div>
+  <main>
+    <FilmList :search= 'search'/>
+  </main>
 </template>
 
 <script>
-import FilmList from './FilmList.vue'
+import FilmList from "./FilmList.vue";
 
 export default {
-   name: 'FilmList',
-   components: {
-    FilmList
-   }
-}
+  name: "Main",
+  components: {
+    FilmList,
+  },
+
+  props: ['search']
+};
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
