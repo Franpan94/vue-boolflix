@@ -37,6 +37,7 @@ export default {
         .get(`${this.apiurlseriesTV}?api_key=${this.apikey}&query=${word}`)
         .then((result) => {
         this.seriesTV = result.data.results;
+        console.log(this.seriesTV);
         })
       }
   },

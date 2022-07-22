@@ -1,7 +1,7 @@
 <template>
-  <main>
-    <FilmList :films = 'films' :seriesTV = 'seriesTV'/>
-    <SeriesList />
+  <main class="d-flex justify-content-between">
+    <FilmList :films = 'films'/>
+    <SeriesList  :seriesTV = 'seriesTV' />
   </main>
 </template>
 
