@@ -9,6 +9,7 @@
       <img v-else-if="film.original_language==='fr'" src=https://www.bandiere-mondo.it/data/flags/emoji/facebook/256x256/fr.png alt="" class="ms_width">
       <img v-else-if="film.original_language==='ja'" src=https://emojis.wiki/emoji-pics/apple/japan-apple.png alt="" class="ms_width">
       <h6 v-else>{{film.original_language}}</h6>
+      <img :src="(`https://image.tmdb.org/t/p/w342${film.poster_path}`)" :alt="film.title" class="ms_width_img pt-2 pb-4">
     </h6>
     
   </section>
@@ -25,5 +26,10 @@ export default {
 <style lang ="scss">
    .ms_width{
     width: 25px;
+   }
+
+   .ms_width_img{
+    width: 150px;
+    display: block;
    }
 </style>

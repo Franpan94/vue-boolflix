@@ -1,14 +1,18 @@
 <template>
   <section class="pt-2">
       <h6 v-for="serieTV in seriesTV" :key="serieTV.id">
-            {{serieTV.name}} - {{serieTV.original_name}} - {{serieTV.vote_average}}
-            <img v-if="serieTV.original_language==='it'" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/flag-for-italy_1f1ee-1f1f9.png" alt="" class="ms_width">
-            <img v-else-if="serieTV.original_language==='en'" src=https://www.bandiere-mondo.it/data/flags/emoji/facebook/256x256/gb.png alt="" class="ms_width">
-            <img v-else-if="serieTV.original_language==='de'" src=https://www.bandiere-mondo.it/data/flags/emoji/facebook/256x256/de.png alt="" class="ms_width">
-            <img v-else-if="serieTV.original_language==='es'" src=https://www.emojimeaning.com/img/img-apple-160/1f1ea-1f1f8.png alt="" class="ms_width">
-            <img v-else-if="serieTV.original_language==='fr'" src=https://www.bandiere-mondo.it/data/flags/emoji/facebook/256x256/fr.png alt="" class="ms_width">
-            <img v-else-if="serieTV.original_language==='ja'" src=https://emojis.wiki/emoji-pics/apple/japan-apple.png alt="" class="ms_width">
-            <h6 v-else>{{film.original_language}}</h6>
+            <i v-for="(vote,index) in intnum(serieTV.vote_average)" class="fa-solid fa-star ms_gold" :key="index"></i>
+            <i v-for="(star,i) in (5 - intnum(serieTV.vote_average)) " class="fa-regular fa-star" :key="i"></i>
+            {{serieTV.name}} - {{serieTV.original_name}} 
+             <div v-for="(language,counter) in languages" :key="counter">
+                  <img v-if="languages.includes(serieTV.original_language)" :src="require(`../assets/img/${language}`)">
+            
+                  <h6 v-else>{{serieTV.original_language}}</h6>
+             </div>
+            
+             
+               
+            <img :src="(`https://image.tmdb.org/t/p/w342${serieTV.poster_path}`)" :alt="serieTV.title" class="ms_width_img pt-2 pb-4">
         </h6>
     </section>
 </template>
@@ -16,10 +20,25 @@
 <script>
 export default {
  name: 'SeriesList',
- props: ['seriesTV']
+ props: ['seriesTV'],
+
+  data: function () {
+    return {
+      languages: ['en', 'de', 'es', 'fr', 'ja', 'it']
+    };
+  },
+ methods: {
+    intnum(number){
+       return Math.round(number/2);
+    }
+ }
 }
 </script>
 
-<style>
+<style lang ="scss">
+
+.ms_gold{
+   color: gold;
+}
 
 </style>
