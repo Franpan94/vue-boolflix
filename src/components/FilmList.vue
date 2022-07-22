@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h1>{{film.title}}</h1>
-    <h3>{{film.original_title}}</h3>
-    <h3>{{film.original_language}}</h3>
-    <h3>{{film.vote_average}}</h3>
+    <h3 v-for="film in films" :key="film.id">
+      {{film.title}} - {{film.original_title}} - {{film.original_language}} - {{film.vote_average}}
+    </h3>
+    <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/80/flag-for-italy_1f1ee-1f1f9.png" alt="">
   </section>
 </template>
 
@@ -11,7 +11,7 @@
 export default {
   name: 'FilmList',
 
-  props: ['film']
+  props: ['films']
 }
 </script>
 

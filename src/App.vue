@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <Header @search="searching"/>
-    <div v-if="filterfilms.length > 0">
-      <Main v-for="film in filterfilms" :key="film.id" :film="film" />
-    </div>
-    <div v-else>
-      <h2>Nessun risultato trovato</h2>
-    </div>
+    <Header @search="getfilm" @research="getseriesTV"/>
+    <Main :films = films :seriesTV = seriesTV />
   </div>
 </template>
 
@@ -20,34 +15,33 @@ export default {
 
   data: function () {
     return {
+      apikey: 'db8eb2464e37ce0450116e6ea6d513f3',
+      apiurlfilms: 'https://api.themoviedb.org/3/search/movie',
       films: [],
-      filterfilms: [],
+      seriesTV: [],
+      apiurlseriesTV: 'https://api.themoviedb.org/3/search/tv',
     };
   },
 
   methods:{
-    getfilm() {
+    getfilm(word) {
       axios
-        .get("http://api.themoviedb.org/3/search/movie?api_key=db8eb2464e37ce0450116e6ea6d513f3&query=return")
-        .then((results) => {
-          this.films = results.data.results;
-          this.filterfilms=this.films;
+        .get(`${this.apiurlfilms}?api_key=${this.apikey}&query=${word}`)
+        .then((result) => {
+        this.films = result.data.results;
         })
       },
 
-    searching(word){
-      if(word === ''){
-        this.filterfilms = this.films;
-      } else{
-         this.filterfilms = this.films.filter((film) => film.title.toLowerCase().includes(word));
+      getseriesTV(word) {
+        axios
+        .get(`${this.apiurlseriesTV}?api_key=${this.apikey}&query=${word}`)
+        .then((result) => {
+        this.seriesTV = result.data.results;
+        })
       }
-      
-    }
   },
 
-  created() {
-    this.getfilm();
-  },
+  
 
   components: {
     Header,

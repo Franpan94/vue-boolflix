@@ -1,19 +1,22 @@
 <template>
   <main>
-    <FilmList :film= 'film'/>
+    <FilmList :films = 'films' :seriesTV = 'seriesTV'/>
+    <SeriesList />
   </main>
 </template>
 
 <script>
 import FilmList from "./FilmList.vue";
+import SeriesList from "./SeriesList.vue";
 
 export default {
   name: "Main",
   components: {
     FilmList,
+    SeriesList
   },
 
-  props: ['film']
+  props: ['films', 'seriesTV']
 };
 </script>
 
