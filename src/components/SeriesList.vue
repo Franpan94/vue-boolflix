@@ -4,11 +4,11 @@
             <i v-for="(vote,index) in intnum(serieTV.vote_average)" class="fa-solid fa-star ms_gold" :key="index"></i>
             <i v-for="(star,i) in (5 - intnum(serieTV.vote_average)) " class="fa-regular fa-star" :key="i"></i>
             {{serieTV.name}} - {{serieTV.original_name}} 
-             <div v-for="(language,counter) in languages" :key="counter">
-                  <img v-if="languages.includes(serieTV.original_language)" :src="require(`../assets/img/${language}`)">
+               
+                  <img v-if="languages.includes(serieTV.original_language)" :src="require(`../assets/img/${language.img}`)">
             
                   <h6 v-else>{{serieTV.original_language}}</h6>
-             </div>
+              
             
              
                
@@ -24,7 +24,37 @@ export default {
 
   data: function () {
     return {
-      languages: ['en', 'de', 'es', 'fr', 'ja', 'it']
+      languages: [
+                {
+                    img: 'de.png',
+                    name: 'germania',
+                },
+
+                {
+                    img: 'en.png',
+                    name: 'en',
+                },
+
+                {
+                    img: 'es.png',
+                    name: 'es',
+                },
+
+                {
+                    img: 'fr.png',
+                    name: 'fr',
+                },
+
+                {
+                    img: 'it.png',
+                    name: 'it',
+                },
+
+                {
+                    img: 'japan.png',
+                    name: 'japan',
+                },
+            ],
     };
   },
  methods: {
