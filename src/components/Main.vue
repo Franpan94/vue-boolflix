@@ -1,7 +1,7 @@
 <template>
-  <main class="d-flex justify-content-between">
-    <FilmList :films = 'films'/>
-    <SeriesList  :seriesTV = 'seriesTV' />
+  <main class="d-flex justify-content-center">
+    <FilmList class="ms_pl" :films = 'films'/>
+    <SeriesList :seriesTV = 'seriesTV' />
   </main>
 </template>
 
@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+    .ms_pl{
+      padding-left: 250px;
+    }
 </style>

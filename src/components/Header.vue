@@ -4,40 +4,22 @@
       <h1>Boolflix</h1>
     </div>
     <div class="container">
-      <div class="d-flex justify-content-between">
-        <div>
-          <h1>Lista film</h1>
-          <input
+      <div class="d-flex justify-content-center">
+        <div class="pt-3">
+          <input 
             type="text"
-            v-model.trim="textosearchfilms"
-            @keyup.enter="$emit('search', textosearchfilms)"
+            v-model.trim="textosearch"
+            @keyup.enter="$emit('search', textosearch)"
           />
-          <div class="p-2">
-            <button
-              type="button"
-              class="btn btn-primary"
-              @click="$emit('search', textosearchfilms)"
-            >
-              Search
-            </button>
-          </div>
         </div>
-        <div >
-          <h1>Lista Serie TV</h1>
-          <input
-            type="text"
-            v-model.trim="textosearchseriesTV"
-            @keyup.enter="$emit('research', textosearchseriesTV)"
-          />
-          <div class="p-2">
-            <button
-              type="button"
-              class="btn btn-primary"
-              @click="$emit('research', textosearchseriesTV)"
-            >
-              Search
-            </button>
-          </div>
+        <div class="p-2">
+          <button 
+            type="button"
+            class="btn btn-primary"
+            @click="$emit('search', textosearch)"
+          >
+            Search
+          </button>
         </div>
       </div>
     </div>
@@ -55,7 +37,8 @@ export default {
     };
   },
 };
-</script>
+</script >
 
-<style>
+<style lang ="scss">
+
 </style>

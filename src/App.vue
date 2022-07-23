@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @search="getfilm" @research="getseriesTV"/>
+    <Header @search="getfilmsandseriesTV"/>
     <Main :films = films :seriesTV = seriesTV />
   </div>
 </template>
@@ -24,25 +24,20 @@ export default {
   },
 
   methods:{
-    getfilm(word) {
+    getfilmsandseriesTV(word) {
       axios
         .get(`${this.apiurlfilms}?api_key=${this.apikey}&query=${word}`)
         .then((result) => {
         this.films = result.data.results;
         })
-      },
-
-      getseriesTV(word) {
         axios
         .get(`${this.apiurlseriesTV}?api_key=${this.apikey}&query=${word}`)
         .then((result) => {
         this.seriesTV = result.data.results;
         console.log(this.seriesTV);
         })
-      }
+      },
   },
-
-  
 
   components: {
     Header,
