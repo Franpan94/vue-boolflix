@@ -13,7 +13,6 @@
         <img
           v-if="languages.includes(film.original_language)"
           :src="require(`../assets/img/${film.original_language}.png`)"
-          :alt="film.title"
           class="ms_width"
         />
         <span v-else>{{ film.original_language }}</span>
@@ -41,7 +40,7 @@ export default {
 
   data: function () {
     return {
-      languages: ["en", "de", "es", "fr", "japan", "it"],
+      languages: ["en", "de", "es", "fr", "ja", "it"],
     };
   },
   methods: {

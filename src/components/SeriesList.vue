@@ -5,7 +5,7 @@
          <h2>{{ serieTV.name }}</h2> 
          <img
            :src="`https://image.tmdb.org/t/p/w342${serieTV.poster_path}`"
-           :alt="serieTV.title"
+           :alt="serieTV.name"
            class="ms_width_img pt-2 pb-4"
          />
          <div class="ms_bg_black p-2 ms_none">
