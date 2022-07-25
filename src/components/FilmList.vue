@@ -64,7 +64,7 @@ export default {
 .ms_bg_black {
   background-color: black;
   color: white;
-  height: 600px;
+  height: 100%;
   border: 2px solid white;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <section class="pt-4 row">
-    <h1 class="pt-2 ms_color">Lista SerieTV</h1>
+    <h1 class="pt-5 ms_color">Lista SerieTV</h1>
     <div v-for="serieTV in seriesTV" :key="serieTV.id" class="col-3">
          <h2>{{ serieTV.name }}</h2> 
          <img
