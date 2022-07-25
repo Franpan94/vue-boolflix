@@ -1,7 +1,12 @@
 <template>
-  <main class="d-flex justify-content-center">
-    <FilmList class="ms_pl" :films = 'films'/>
-    <SeriesList :seriesTV = 'seriesTV' />
+  <main class="ms_bg_grey">
+    <div v-if="((films.length > 0) && (seriesTV.length > 0))">
+      <FilmList class="ms_pl_10" :films = 'films'/>
+      <SeriesList :seriesTV = 'seriesTV' />
+    </div>
+    <div v-else>
+      <h2>Nessun risultato trovato</h2>
+    </div>
   </main>
 </template>
 
@@ -21,7 +26,12 @@ export default {
 </script>
 
 <style lang="scss">
-    .ms_pl{
-      padding-left: 250px;
+    .ms_bg_grey{
+      background-color: grey;
+      height: 100%;
+    }
+
+    .ms_pl_10{
+      padding-left: 30px;
     }
 </style>

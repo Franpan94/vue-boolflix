@@ -1,7 +1,7 @@
 <template>
-  <section class="pt-4">
-      <h6 v-for="serieTV in seriesTV" :key="serieTV.id">
-         <h2>Serie TV</h2>
+  <section class="pt-4 row">
+      <h1 class="pt-2">Lista Serie TV</h1>  
+      <h6 v-for="serieTV in seriesTV" :key="serieTV.id" class="col-2">
          <i v-for="(vote,index) in getstars(serieTV.vote_average)" class="fa-solid fa-star ms_gold" :key="index"></i>
          <i v-for="(star,i) in (5 - getstars(serieTV.vote_average)) " class="fa-regular fa-star" :key="i"></i>
          {{serieTV.name}} - {{serieTV.original_name}} 

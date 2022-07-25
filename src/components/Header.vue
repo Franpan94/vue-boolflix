@@ -1,21 +1,21 @@
 <template>
-  <header>
-    <div class="text-center">
-      <h1>Boolflix</h1>
-    </div>
+  <header class="ms_bg">
     <div class="container">
-      <div class="d-flex justify-content-center">
-        <div class="pt-3">
-          <input 
+      <div class="row">
+        <div class="col-9">
+          <h1 class="display-3 color-red">Boolflix</h1>
+
+        </div>
+        <div class="col-3 pt-4">
+          <input placeholder="Cerca film o serie TV"
+            class="pt-1 pb-2"
             type="text"
             v-model.trim="textosearch"
             @keyup.enter="$emit('search', textosearch)"
           />
-        </div>
-        <div class="p-2">
-          <button 
+          <button  
             type="button"
-            class="btn btn-primary"
+            class="btn btn-danger"
             @click="$emit('search', textosearch)"
           >
             Search
@@ -40,5 +40,12 @@ export default {
 </script >
 
 <style lang ="scss">
+.color-red{
+  color: red;
+}
+
+.ms_bg{
+  background-color: black;
+}
 
 </style>

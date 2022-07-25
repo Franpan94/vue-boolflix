@@ -1,7 +1,7 @@
 <template>
-  <section class="pt-4">
-    <h6 v-for="film in films" :key="film.id">
-      <h2>Film</h2>
+  <section class="pt-4 row">
+    <h1 v-if="films.length > 0" class="pt-2">Lista Film</h1>
+    <h6 v-for="film in films" :key="film.id" class="col-2">
       <i v-for="(vote,index) in getstars(film.vote_average)" class="fa-solid fa-star ms_gold" :key="index"></i>
       <i v-for="(star,i) in (5 - getstars(film.vote_average)) " class="fa-regular fa-star" :key="i"></i>
       {{film.title}} - {{film.original_title}} 
@@ -9,7 +9,6 @@
       <h6 v-else>{{film.original_language}}</h6>
       <img :src="(`https://image.tmdb.org/t/p/w342${film.poster_path}`)" :alt="film.title" class="ms_width_img pt-2 pb-4">
     </h6>
-    
   </section>
 </template>
 
