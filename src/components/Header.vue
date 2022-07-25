@@ -18,7 +18,7 @@
             class="btn btn-danger"
             @click="$emit('search', textosearch)"
           >
-            Search
+            Cerca
           </button>
         </div>
       </div>

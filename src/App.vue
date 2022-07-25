@@ -26,12 +26,12 @@ export default {
   methods:{
     getfilmsandseriesTV(word) {
       axios
-        .get(`${this.apiurlfilms}?api_key=${this.apikey}&query=${word}`)
+        .get(`${this.apiurlfilms}?api_key=${this.apikey}&query=${word}&language=it-IT`)
         .then((result) => {
         this.films = result.data.results;
         })
         axios
-        .get(`${this.apiurlseriesTV}?api_key=${this.apikey}&query=${word}`)
+        .get(`${this.apiurlseriesTV}?api_key=${this.apikey}&query=${word}&language=it-IT`)
         .then((result) => {
         this.seriesTV = result.data.results;
         console.log(this.seriesTV);
