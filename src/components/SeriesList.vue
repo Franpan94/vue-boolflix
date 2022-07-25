@@ -16,7 +16,8 @@
              :src="require(`../assets/img/${serieTV.original_language}.png`)"
             />
             <span v-else>{{ serieTV.original_language }}</span>
-            <p class="pt-2">{{ serieTV.overview }}</p>
+            <h4 class="pt-2" v-if="serieTV.overview === ''">Trama non disponibile</h4>
+            <p v-else class="pt-2">{{ serieTV.overview }}</p>
             <i
               v-for="(vote, index) in getstars(serieTV.vote_average)"
               class="fa-solid fa-star ms_gold"

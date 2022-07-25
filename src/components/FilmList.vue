@@ -17,7 +17,8 @@
           class="ms_width"
         />
         <span v-else>{{ film.original_language }}</span>
-        <p class="pt-2">{{ film.overview }}</p>
+        <h4 class="pt-2" v-if="film.overview === ''">Trama non disponibile</h4>
+        <p v-else class="pt-2">{{ film.overview }}</p>
         <i
           v-for="(vote, index) in getstars(film.vote_average)"
           class="fa-solid fa-star ms_gold"
