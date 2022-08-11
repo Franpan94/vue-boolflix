@@ -11,12 +11,12 @@
             class="pt-1 pb-2"
             type="text"
             v-model.trim="textosearch"
-            @keyup.enter="$emit('search', textosearch)"
+            @keyup.enter="getext(textosearch)"
           />
           <button  
             type="button"
             class="btn btn-danger"
-            @click="$emit('search', textosearch)"
+            @click="getext(textosearch)"
           >
             Cerca
           </button>
@@ -32,10 +32,15 @@ export default {
 
   data: function () {
     return {
-      textosearchfilms: "",
-      textosearchseriesTV: "",
+      textosearch: "",
     };
   },
+
+  methods: {
+    getext(text){
+      this.$emit('search', text);
+    }
+  }
 };
 </script >
 
