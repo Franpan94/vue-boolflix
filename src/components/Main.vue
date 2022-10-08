@@ -5,7 +5,7 @@
       <SeriesList class="ms_pl_30 ms_pr_30" :seriesTV = 'seriesTV' />
     </div>
     <div v-else>
-      <h2 class="ms_pl_30 ms_pr_30">Nessun risultato trovato</h2>
+      <h1 class="text-center pt-5">Inserire un input valido</h1>
     </div>
   </main>
 </template>
